@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<a href="/registration">Зарегистрироваться</a>
+<div th:if="${param.error}" role="alert">Неверно введён логин или пароль</div>
+<div th:if="${param.logout}" role="alert">Успешно</div>
+<form th:action="@{/login}" method="post">
+    <div><label>
+        <input type="text" name="username" placeholder="Логин">
+    </label></div>
+    <div><label>
+        <input type="password" name="password" placeholder="Пароль">
+    </label></div>
+    <div>
+        <button type="submit">login</button>
+    </div>
+</form>
+</body>
+</html>
