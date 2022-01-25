@@ -16,7 +16,7 @@ public class AddressController {
     }
 
     @GetMapping("/address")
-    public List<Address> getAddresses() {
+    public @ResponseBody List<Address> getAddresses() {
         return addressService.getAddresses();
     }
 
